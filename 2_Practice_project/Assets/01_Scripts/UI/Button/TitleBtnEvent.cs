@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class TitleBtnEvent : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void StartBtnEvent()
     {
-        
+        DOTween.KillAll();
+        SceneManager.LoadScene("InGameScene"); // or 로딩하는 씬 있으면 바꾸기
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ExitBtnEvent()
     {
-        
+        Application.Quit();
+        Debug.Log("Exit");
     }
 }
